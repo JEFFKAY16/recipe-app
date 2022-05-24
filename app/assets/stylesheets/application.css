@@ -13,3 +13,178 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.nav {
+  width: 100%;
+  background: rgb(43, 43, 43);
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: rgb(63, 223, 240);
+  margin: 10px 20px;
+}
+
+.nav a:hover {
+  color: rgb(194, 223, 244);
+}
+
+/* ----- START RECIPES PAGE ---------- */
+
+.recipes-container {
+  width: 100%;
+  position: fixed;
+}
+
+.recipes-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-recipe {
+  padding: 10px;
+  margin: 10px;
+  color: #000;
+}
+
+.add-recipe button {
+  background: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.9s;
+  border-radius: 4px;
+}
+
+.flex-items button {
+  border: none;
+  outline: none;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.recipe-cards button {
+  background: none;
+  outline: none;
+  border: none;
+  text-decoration: underline;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.add-recipe button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.recipe-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.recipe-cards button:hover {
+  color: rgb(239, 9, 40);
+}
+
+.right-info p {
+  flex-wrap: wrap;
+  text-align: justify;
+}
+
+/* ----------- Recipes Show Now --------- */
+
+.recipes-holder-show {
+  width: 40%;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px auto;
+  padding-bottom: 40px;
+}
+
+.recipe-info {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  color: #000;
+}
+
+.recipe-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.recipe-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.9s;
+  border-radius: 4px;
+}
+
+.recipe-buttons .btn {
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.flex-items button:first-child:hover {
+  color: rgb(9, 143, 239);
+}
+
+.flex-items button:last-child:hover {
+  color: rgb(239, 9, 40);
+}
+
+/* --- Style Table ---- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  text-align: left;
+  background-color: #3a6070;
+  color: #fff;
+  padding: 4px 30px 4px 8px;
+}
+
+table td {
+  border: 1px solid #e3e3e3;
+  padding: 4px 8px;
+}
+
+table tr:nth-child(odd) td {
+  background-color: #e7edf0;
+}
+
+/* ----- END RECIPES PAGE ---------- */
