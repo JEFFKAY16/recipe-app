@@ -1,13 +1,13 @@
 <div class="recipes-container">
   <div class="recipes-holder-show center">
     <div class="recipe-info">
-      <h2>Recipe #</h2>
+      <h2><%= @recipe.name %></h2>
     </div>
     <div class="recipe-details">
       <div class="left-details">
-        <p>Preparation Time: 1hrs<p>
-        <p>Cooking Time: 1.5hrs<p>
-        <p>Instructions: ----- <p>
+        <p>Preparation Time: <%= @recipe.preparation_time %><p>
+        <p>Cooking Time: <%= @recipe.cooking_time %><p>
+        <p>Instructions: <%= @recipe.description %> <p>
       </div>
       <div class="right-details">
         <p>Public <%= check_box_tag (:id_name) %></p>
@@ -25,33 +25,33 @@
           <th>Value</th>
           <th>Actions</th>
         <tr>
-          <tr>
-            <td>Apple</td>
-            <td>20g</td>
-            <td>$100</td>
-            <td class="flex-items">
-              <button>Modify</button>
-              <button>Remove</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Milk</td>
-            <td>500ml</td>
-            <td>$60</td>
-            <td class="flex-items">
-              <button>Modify</button>
-              <button>Remove</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Flour</td>
-            <td>50g</td>
-            <td>$410</td>
-            <td class="flex-items">
-              <button>Modify</button>
-              <button>Remove</button>
-            </td>
-          </tr>
+        <tr>
+          <td>Apple</td>
+          <td>20g</td>
+          <td>$100</td>
+          <td class="flex-items">
+            <button>Modify</button>
+            <button>Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Milk</td>
+          <td>500ml</td>
+          <td>$60</td>
+          <td class="flex-items">
+            <button>Modify</button>
+            <button>Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Flour</td>
+          <td>50g</td>
+          <td>$410</td>
+          <td class="flex-items">
+            <button>Modify</button>
+            <button>Remove</button>
+          </td>
+        </tr>
       </table>
     </div>
   </div>

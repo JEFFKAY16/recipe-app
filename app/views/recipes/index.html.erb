@@ -3,32 +3,16 @@
     <div class="add-recipe">
       <button>Add Recipe</button>
     </div>
-    <div class="recipe-cards">
-      <div class="left-info">
-        <h2>Recipe #</h2>
-        <button>Remove</button>
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-cards">
+        <div class="left-info">
+          <h2><%= recipe.name %></h2>
+          <button>Remove</button>
+        </div>
+        <div class="right-info">
+          <p><%= recipe.description %></p>
+        </div>
       </div>
-      <div class="right-info">
-        <p>Description - minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
-    <div class="recipe-cards">
-      <div class="left-info">
-        <h2>Recipe #</h2>
-        <button>Remove</button>
-      </div>
-      <div class="right-info">
-        <p>Description - minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
-    <div class="recipe-cards">
-      <div class="left-info">
-        <h2>Recipe #</h2>
-        <button>Remove</button>
-      </div>
-      <div class="right-info">
-        <p>Description - minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
+    <%end%>
   </div>
 </div>
