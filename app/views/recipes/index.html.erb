@@ -10,7 +10,9 @@
       <% @recipes.each do |recipe| %>
         <div class="recipe-cards">
           <div class="left-info">
-            <h2><%= recipe.name %></h2>
+            <%= link_to recipe_path(recipe) do %>
+              <h2><%= recipe.name %></h2>
+            <% end %>
             <button><%= link_to("Remove", delete_recipe_path(recipe)) %></button>
           </div>
           <div class="right-info">

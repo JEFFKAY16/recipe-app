@@ -93,6 +93,15 @@
   margin-bottom: 10px;
 }
 
+.recipe-cards .left-info a {
+  color: #22aeef;
+  text-decoration: none;
+}
+
+.recipe-cards .left-info a:visited {
+  color: #22aeef;
+}
+
 .recipe-cards button:hover {
   color: rgb(239, 9, 40);
 }
@@ -100,6 +109,7 @@
 .right-info p {
   flex-wrap: wrap;
   text-align: justify;
+  padding-top: 8px;
 }
 
 /* ----------- Recipes Show Now --------- */
@@ -152,6 +162,12 @@
 .btn:hover {
   background: #000;
   color: #fff;
+}
+
+.right-btn a {
+  color: rgb(9, 143, 239);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .flex-items button:first-child:hover {

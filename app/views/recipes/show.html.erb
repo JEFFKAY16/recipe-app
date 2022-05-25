@@ -15,7 +15,7 @@
     </div>
     <div class="recipe-buttons">
       <button class="left-btn btn">Generate Shopping List</button>
-      <button class="right-btn btn">Add Ingredients</button>
+      <button class="right-btn btn"><%= link_to "Add Ingredients", new_recipe_recipe_food_path(@recipe) %></button>
     </div>
     <div class="table-data">
       <table>
@@ -25,33 +25,17 @@
           <th>Value</th>
           <th>Actions</th>
         <tr>
-        <tr>
-          <td>Apple</td>
-          <td>20g</td>
-          <td>$100</td>
-          <td class="flex-items">
-            <button>Modify</button>
-            <button>Remove</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Milk</td>
-          <td>500ml</td>
-          <td>$60</td>
-          <td class="flex-items">
-            <button>Modify</button>
-            <button>Remove</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Flour</td>
-          <td>50g</td>
-          <td>$410</td>
-          <td class="flex-items">
-            <button>Modify</button>
-            <button>Remove</button>
-          </td>
-        </tr>
+        <% @recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %></td>
+            <td>$ <%= (recipe_food.food.price * recipe_food.quantity) %></td>
+            <td class="flex-items">
+              <button>Modify</button>
+              <button>Remove</button>
+            </td>
+          </tr>
+        <%end%>
       </table>
     </div>
   </div>
