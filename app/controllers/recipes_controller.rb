@@ -6,4 +6,29 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
   end
+
+  def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    user = current_user
+    # Instanciate object with parameters
+    @recipe = user.recipes.new(recipe_params)
+    # Save
+    if @recipe.save
+      # Redirect
+      redirect_to(recipes_path)
+      flash[:success] = 'Recipe was successfully added.'
+    else
+      # Redisplay Form
+      render('new')
+      flash[:failed] = 'Recipe was not added - please fix the error(s)'
+    end
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
+  end
+
 end

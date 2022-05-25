@@ -38,7 +38,7 @@
 
 .recipes-container {
   width: 100%;
-  position: fixed;
+  position: relative;
 }
 
 .recipes-holder {
@@ -49,17 +49,20 @@
 }
 
 .add-recipe {
-  padding: 10px;
-  margin: 10px;
-  color: #000;
+  margin: 40px;
 }
 
-.add-recipe button {
-  background: none;
-  padding: 8px 12px;
-  cursor: pointer;
+.add-recipe a {
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+  padding: 10px;
   transition: 0.9s;
-  border-radius: 4px;
+}
+
+.add-recipe a:hover {
+  color: #fff;
+  background: #000;
 }
 
 .flex-items button {
@@ -79,12 +82,8 @@
   cursor: pointer;
 }
 
-.add-recipe button:hover {
-  background: #000;
-  color: #fff;
-}
-
 .recipe-cards {
+  width: 380px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -161,6 +160,22 @@
 
 .flex-items button:last-child:hover {
   color: rgb(239, 9, 40);
+}
+
+/* --------- New Recipes Form ------- */
+
+input[type=submit] {
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+  padding: 10px;
+  transition: 0.9s;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  color: #fff;
+  background: #000;
 }
 
 /* --- Style Table ---- */
