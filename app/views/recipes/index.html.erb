@@ -11,7 +11,7 @@
         <div class="recipe-cards">
           <div class="left-info">
             <h2><%= recipe.name %></h2>
-            <button>Remove</button>
+            <button><%= link_to("Remove", delete_recipe_path(recipe)) %></button>
           </div>
           <div class="right-info">
             <p><%= recipe.description %></p>
