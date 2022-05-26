@@ -4,8 +4,8 @@
       <h2>Shopping List</h2>
     </div>
     <div class="recipe-info">
-      <p>Amount of food items to by: 3</p>
-      <p>Total value of food needed: $1202</p>
+      <p>Amount of food items to by: <%= @foods.length %></p>
+      <p>Total value of food needed:$ <%= @quantity %></p>
     </div>
     <div class="table-data">
       <table>
@@ -14,21 +14,14 @@
           <th>Quantity</th>
           <th>Price</th>
         <tr>
+        <% @foods.each do |food| %>
           <tr>
-            <td>Apple</td>
-            <td>20g</td>
-            <td>$100</td>
+            <% quantity = RecipeFood.joins(:food).where(food_id: food.id).sum( 'quantity') %>
+            <td><%= food.name %></td>
+              <td><%= quantity %></td>
+            <td>$<%= (food.price * quantity) %></td>
           </tr>
-          <tr>
-            <td>Milk</td>
-            <td>500ml</td>
-            <td>$60</td>
-          </tr>
-          <tr>
-            <td>Flour</td>
-            <td>50g</td>
-            <td>$410</td>
-          </tr>
+        <%end%>
       </table>
     </div>
 
