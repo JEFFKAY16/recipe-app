@@ -38,7 +38,8 @@
   transition: 0.9s;
 }
 
-.left-btn a, .right-btn a  {
+.left-btn a,
+.right-btn a {
   color: rgb(9, 143, 239);
   text-decoration: none;
   font-weight: bold;
