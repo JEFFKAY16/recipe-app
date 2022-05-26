@@ -19,13 +19,16 @@ class RecipeFoodController < ApplicationController
     end
   end
 
-  def edit; end
-
-  def update; end
-
-  def delete; end
-
-  def destroy; end
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    if @recipe_food.destroy
+      redirect_to(recipes_path)
+      flash[:success] = 'Deleted'
+    else
+      redirect_to(recipes_path)
+      flash[:success] = 'Error Deleting'
+    end
+  end
 
   private
 

@@ -32,7 +32,7 @@
             <td>$ <%= (recipe_food.food.price * recipe_food.quantity) %></td>
             <td class="flex-items">
               <button>Modify</button>
-              <button>Delete</button>
+              <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete %>
             </td>
           </tr>
         <%end%>
