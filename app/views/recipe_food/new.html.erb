@@ -1,0 +1,25 @@
+<div class="recipes-container">
+  <div class="recipes-holder-show center">
+    <div class="recipe-info">
+      <%= link_to recipes_path do %>
+        <p><< Back To Recipe</p>
+      <% end %>
+      <h2>Add Ingredients</h2>
+    </div>
+    <div class="recipe-form">
+      <%= form_with url: recipe_recipe_food_index_path(params[:recipe_id]), scope: :recipe_foods do |f| %>
+        <%= f.label :food_id, "Food Name" %>
+        <br>
+        <%= f.select :food_id, @foods.collect { |food| [food.name, food.id] } %>
+        <br>
+        <br>
+        <%= f.label :quantity, "Quantity" %>
+        <br>
+        <%= f.text_field(:quantity) %>
+         <br>
+        <br>
+        <%= f.submit('Add Ingredient') %>
+      <% end %>
+    </div>
+  </div>
+</div>

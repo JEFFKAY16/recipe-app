@@ -30,6 +30,20 @@
   margin: 10px 20px;
 }
 
+.add-recipe a {
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+  padding: 10px;
+  transition: 0.9s;
+}
+
+.right-btn a {
+  color: rgb(9, 143, 239);
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .nav a:hover {
   color: rgb(194, 223, 244);
 }
@@ -38,7 +52,7 @@
 
 .recipes-container {
   width: 100%;
-  position: fixed;
+  position: relative;
 }
 
 .recipes-holder {
@@ -49,17 +63,12 @@
 }
 
 .add-recipe {
-  padding: 10px;
-  margin: 10px;
-  color: #000;
+  margin: 40px;
 }
 
-.add-recipe button {
-  background: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: 0.9s;
-  border-radius: 4px;
+.add-recipe a:hover {
+  color: #fff;
+  background: #000;
 }
 
 .flex-items button {
@@ -79,12 +88,8 @@
   cursor: pointer;
 }
 
-.add-recipe button:hover {
-  background: #000;
-  color: #fff;
-}
-
 .recipe-cards {
+  width: 380px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -94,6 +99,15 @@
   margin-bottom: 10px;
 }
 
+.recipe-cards .left-info a {
+  color: #22aeef;
+  text-decoration: none;
+}
+
+.recipe-cards .left-info a:visited {
+  color: #22aeef;
+}
+
 .recipe-cards button:hover {
   color: rgb(239, 9, 40);
 }
@@ -101,6 +115,7 @@
 .right-info p {
   flex-wrap: wrap;
   text-align: justify;
+  padding-top: 8px;
 }
 
 /* ----------- Recipes Show Now --------- */
@@ -161,6 +176,22 @@
 
 .flex-items button:last-child:hover {
   color: rgb(239, 9, 40);
+}
+
+/* --------- New Recipes Form ------- */
+
+input[type=submit] {
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+  padding: 10px;
+  transition: 0.9s;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  color: #fff;
+  background: #000;
 }
 
 /* --- Style Table ---- */
