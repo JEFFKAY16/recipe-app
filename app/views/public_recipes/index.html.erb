@@ -1,23 +1,17 @@
 <div class="recipes-holder">
   <h1 class="text-center">Public Recipes</h1>
-  <div class="recipe-cards flexible-size">
-    <div>
-      <h2 class="m-0">Simple Dish</h2>
-      <span>By: David</span>
-    </div>
-    <div>
-      <span>Total food items: 4</span>
-      <span>Total price: $203</span>
-    </div>
-  </div>
-  <div class="recipe-cards flexible-size">
-    <div>
-      <h2 class="m-0">Complex Dish</h2>
-      <span>By: George</span>
-    </div>
-    <div>
-      <span>Total food items: 4</span>
-      <span>Total price: $300</span>
-    </div>
-  </div>
+  <% if !@public_recipes.blank? %>
+    <% for item in @public_recipes %>
+      <div class="recipe-cards flexible-size">
+        <div>
+          <h2 class="m-0"><%= item.name %></h2></h2>
+          <span>By: <%= item.user.name %></span>
+        </div>
+        <div>
+          <span>Total ingredients: <%= item.recipe_foods.count %></span>
+          <span>Total price: $<%= item.recipe_foods.inject(0){|sum,x| sum + x.quantity * x.food.price }   %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
