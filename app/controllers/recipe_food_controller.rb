@@ -19,22 +19,17 @@ class RecipeFoodController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
-  def delete
-  end
+  def delete; end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
   def recipe_foods_params
     params.require(:recipe_foods).permit(:food_id, :quantity)
   end
-
 end
