@@ -11,7 +11,7 @@ class RecipeFoodController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new(recipe_foods_params)
     if @recipe_food.save
-      redirect_to(recipes_path)
+      redirect_to(recipe_path(@recipe))
       flash[:success] = 'Recipe Food was successfully added.'
     else
       render('new')
@@ -19,13 +19,31 @@ class RecipeFoodController < ApplicationController
     end
   end
 
-  def edit; end
+  # def edit
+  #   @recipe_food = RecipeFood.find(params[:id])
+  # end
 
-  def update; end
+  # def update
+  #   @recipe_food = RecipeFood.find(params[:id])
+  #   if @recipe_food.update
+  #     redirect_to(recipes_path)
+  #     flash[:success] = 'Updated'
+  #   else
+  #     redirect_to(recipes_path)
+  #     flash[:success] = 'Error Updating'
+  #   end
+  # end
 
-  def delete; end
-
-  def destroy; end
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    if @recipe_food.destroy
+      redirect_to(recipe_path(@recipe_food))
+      flash[:success] = 'Deleted'
+    else
+      redirect_to(recipes_path)
+      flash[:success] = 'Error Deleting'
+    end
+  end
 
   private
 
