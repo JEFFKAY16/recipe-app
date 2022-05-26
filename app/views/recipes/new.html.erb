@@ -1,0 +1,33 @@
+<div class="recipes-container">
+  <div class="recipes-holder-show center">
+    <div class="recipe-info">
+      <p><%= link_to "<< Back To Recipes List", recipes_path %></p>
+      <h2>Add New Recipe</h2>
+    </div>
+    <div class="recipe-form">
+      <%= form_for(@recipe) do |f| %>
+        <%= f.label :name, "Name" %>
+        <br>
+        <%= f.text_field(:name) %>
+        <br>
+        <br>
+        <%= f.label :preparation_time, "Preparation Time" %>
+        <br>
+        <%= f.text_field(:preparation_time) %>
+        <br>
+        <br>
+        <%= f.label :cooking_time, "Cooking Time" %>
+        <br>
+        <%= f.text_field(:cooking_time) %>
+        <br>
+        <br>
+        <%= f.label :description, "Description" %>
+        <br>
+        <%= f.text_area(:description) %>
+        <br>
+        <br>
+        <%= f.submit('Add Recipe') %>
+      <% end %>
+    </div>
+  </div>
+</div>

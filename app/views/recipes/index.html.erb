@@ -1,34 +1,25 @@
 <div class="recipes-container">
   <div class="recipes-holder center">
     <div class="add-recipe">
-      <button>Add Recipe</button>
+      <%= link_to "Add Recipe", new_recipe_path %>
     </div>
-    <div class="recipe-cards">
-      <div class="left-info">
-        <h2>Recipe #</h2>
-        <button>Remove</button>
-      </div>
-      <div class="right-info">
-        <p>Description - minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
-    <div class="recipe-cards">
-      <div class="left-info">
-        <h2>Recipe #</h2>
-        <button>Remove</button>
-      </div>
-      <div class="right-info">
-        <p>Description - minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
-    <div class="recipe-cards">
-      <div class="left-info">
-        <h2>Recipe #</h2>
-        <button>Remove</button>
-      </div>
-      <div class="right-info">
-        <p>Description - minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
+
+    <% if @recipes.empty? %>
+      <p>No recipies yet!</p>
+    <%else%>
+      <% @recipes.each do |recipe| %>
+        <div class="recipe-cards">
+          <div class="left-info">
+            <%= link_to recipe_path(recipe) do %>
+              <h2><%= recipe.name %></h2>
+            <% end %>
+            <button><%= link_to("Remove", delete_recipe_path(recipe)) %></button>
+          </div>
+          <div class="right-info">
+            <p><%= recipe.description %></p>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
   </div>
 </div>
