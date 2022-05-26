@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show, :new, :create]
 
   resources :recipes do
-    resources :recipe_food, only: [:show, :new, :create, :destroy]
+    resources :recipe_food, only: [:show, :new, :create, :edit, :update, :destroy]
     member do
       get :delete
     end
