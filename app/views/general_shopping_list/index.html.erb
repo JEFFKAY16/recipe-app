@@ -1,2 +1,29 @@
-<h1>GeneralShoppingList#index</h1>
-<p>Find me in app/views/general_shopping_list/index.html.erb</p>
+<div class="recipes-container">
+  <div class="recipes-holder-show center">
+    <div class="recipe-info">
+      <h2>Shopping List</h2>
+    </div>
+    <div class="recipe-info">
+      <p>Amount of food items to by: <%= @foods.length %></p>
+      <p>Total value of food needed:$ <%= @quantity %></p>
+    </div>
+    <div class="table-data">
+      <table>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        <tr>
+        <% @foods.each do |food| %>
+          <tr>
+            <% quantity = RecipeFood.joins(:food).where(food_id: food.id).sum( 'quantity') %>
+            <td><%= food.name %></td>
+              <td><%= quantity %></td>
+            <td>$<%= (food.price * quantity) %></td>
+          </tr>
+        <%end%>
+      </table>
+    </div>
+
+  </div>
+</div>

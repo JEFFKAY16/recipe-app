@@ -1,2 +1,29 @@
-<h1>Foods#index</h1>
-<p>Find me in app/views/foods/index.html.erb</p>
+<div class="flex-col">
+  <div class="add-recipe">
+    <%= link_to "Add Food" , new_food_path %>
+  </div>
+  <% if !@foods.blank? %>
+    <div class="table-data flexible-size">
+      <table>
+        <tr>
+          <th>Food</th>
+          <th>Measurement Unit</th>
+          <th>Unit Price</th>
+          <th>Actions</th>
+        </tr>
+        <% for food in @foods %>
+          <tr>
+            <td>
+              <%= food.name %>
+            </td>
+            <td>
+              <%= food.measurement_unit %>
+            </td>
+            <td>$<%= food.price %>
+            </td>
+            <td><%= button_to 'Delete', food_path(food.id), method: :delete %></td>
+          </tr>
+          <% end %>
+    </div>
+    <% end %>
+</div>

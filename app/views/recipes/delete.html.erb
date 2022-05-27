@@ -1,0 +1,14 @@
+<div class="recipes-container">
+  <div class="recipes-holder-show center">
+    <div class="recipe-info">
+      <p><%= link_to "<< Back To Recipes List", recipes_path %></p>
+      <h2>Delete Recipe</h2>
+    </div>
+    <div class="recipe-form">
+      <%= form_for(@recipe, :method => 'delete') do |f| %>
+        <p>Are you sure you want to delete the <strong><%= @recipe.name %></strong> recipe?</p>
+        <%= f.submit('Delete Recipe') %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
   root "public_recipes#index"
+  
+  resources :foods, only: [:index, :new, :create, :destroy]
+  resources :recipes, only: [:index, :show, :new, :create]
 
-  resources :recipes, only: [:index, :show]
-  resources :foods, only: [:index]
+  resources :recipes do
+    resources :recipe_food, only: [:show, :new, :create, :edit, :update, :destroy]
+    member do
+      get :delete
+    end
+  end
+  
   resources :general_shopping_list, only: [:index]
   resources :public_recipes, only: [:index]
 end
