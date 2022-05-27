@@ -22,6 +22,8 @@
   background: rgb(43, 43, 43);
   font-weight: bold;
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav a {
@@ -43,6 +45,15 @@
   color: rgb(9, 143, 239);
   text-decoration: none;
   font-weight: bold;
+}
+
+.logout button {
+  outline: none;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  background: none;
+  cursor: pointer;
 }
 
 .nav a:hover {

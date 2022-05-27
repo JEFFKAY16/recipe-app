@@ -19,21 +19,6 @@ class RecipeFoodController < ApplicationController
     end
   end
 
-  # def edit
-  #   @recipe_food = RecipeFood.find(params[:id])
-  # end
-
-  # def update
-  #   @recipe_food = RecipeFood.find(params[:id])
-  #   if @recipe_food.update
-  #     redirect_to(recipes_path)
-  #     flash[:success] = 'Updated'
-  #   else
-  #     redirect_to(recipes_path)
-  #     flash[:success] = 'Error Updating'
-  #   end
-  # end
-
   def destroy
     @recipe_food = RecipeFood.find(params[:id])
     if @recipe_food.destroy
